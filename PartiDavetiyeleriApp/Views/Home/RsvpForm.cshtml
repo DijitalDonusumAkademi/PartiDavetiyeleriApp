@@ -1,4 +1,4 @@
-﻿
+﻿@model GuestResponse
 @{
     Layout = null;
 }
@@ -11,6 +11,28 @@
     <title>RsvpForm</title>
 </head>
 <body>
-RsvpForm.cshtml View
+<form asp-action="RsvpForm" method="post">
+    <div>
+        <label asp-for="Name">Adınız:</label>
+        <input asp-for="Name" />
+    </div>
+    <div>
+        <label asp-for="Email">Email:</label>
+        <input asp-for="Email" />
+    </div>
+    <div>
+        <label asp-for="Phone">Telefon:</label>
+        <input asp-for="Phone" />
+    </div>
+    <div>
+        <label>Katılacak mısınız?</label>
+        <select asp-for="WillAttend">
+            <option value="">Seçiniz</option>
+            <option value="true">Evet,Katılıyorum</option>
+            <option value="false">Hayır,Katılmıyorum</option>
+        </select>
+    </div>
+    <button type="submit">Gönder</button>
+</form>
 </body>
 </html>
